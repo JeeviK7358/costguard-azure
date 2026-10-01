@@ -1,0 +1,38 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.0",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.api_backend",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "api_backend",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-api-backend-01",
+          "size": "Standard_B1s",
+          "tags": {
+            "Environment": "Staging",
+            "Tier": "API"
+          }
+        },
+        "after": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-api-backend-01",
+          "size": "Standard_B2s",
+          "tags": {
+            "Environment": "Staging",
+            "Tier": "API"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.0",
+  "resource_changes": [
+    {
+      "address": "azurerm_resource_group.rg_core",
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg_core",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "rg-enterprise-core" }
+      }
+    },
+    {
+      "address": "azurerm_resource_group.rg_spoke_01",
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg_spoke_01",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "rg-spoke-01" }
+      }
+    },
+    {
+      "address": "azurerm_resource_group.rg_spoke_02",
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg_spoke_02",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "rg-spoke-02" }
+      }
+    },
+    {
+      "address": "azurerm_virtual_network.vnet_hub",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet_hub",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_space": ["10.0.0.0/16"], "location": "eastus", "name": "vnet-hub-core" }
+      }
+    },
+    {
+      "address": "azurerm_virtual_network.vnet_spoke_01",
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet_spoke_01",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_space": ["10.1.0.0/16"], "location": "eastus", "name": "vnet-spoke-01" }
+      }
+    },
+    {
+      "address": "azurerm_subnet.subnet_gateway",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet_gateway",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_prefixes": ["10.0.0.0/24"], "name": "GatewaySubnet" }
+      }
+    },
+    {
+      "address": "azurerm_subnet.subnet_firewall",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet_firewall",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_prefixes": ["10.0.1.0/24"], "name": "AzureFirewallSubnet" }
+      }
+    },
+    {
+      "address": "azurerm_subnet.subnet_app_tier",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet_app_tier",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_prefixes": ["10.1.1.0/24"], "name": "snet-app-tier" }
+      }
+    },
+    {
+      "address": "azurerm_subnet.subnet_data_tier",
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "subnet_data_tier",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "address_prefixes": ["10.1.2.0/24"], "name": "snet-data-tier" }
+      }
+    },
+    {
+      "address": "azurerm_network_security_group.nsg_app",
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_app",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "nsg-app-prod" }
+      }
+    },
+    {
+      "address": "azurerm_network_security_group.nsg_data",
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_data",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "nsg-data-prod" }
+      }
+    },
+    {
+      "address": "azurerm_network_security_rule.allow_https",
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "allow_https",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "destination_port_range": "443", "direction": "Inbound", "name": "Allow-HTTPS" }
+      }
+    },
+    {
+      "address": "azurerm_network_security_rule.allow_ssh_bastion",
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "allow_ssh_bastion",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "destination_port_range": "22", "direction": "Inbound", "name": "Allow-SSH" }
+      }
+    },
+    {
+      "address": "azurerm_network_interface.nic_primary",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "nic_primary",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "nic-app-01-eth0" }
+      }
+    },
+    {
+      "address": "azurerm_network_interface.nic_secondary",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "nic_secondary",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "nic-app-01-eth1" }
+      }
+    },
+    {
+      "address": "azurerm_route_table.rt_egress",
+      "mode": "managed",
+      "type": "azurerm_route_table",
+      "name": "rt_egress",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": { "location": "eastus", "name": "rt-egress-firewall" }
+      }
+    }
+  ]
+}

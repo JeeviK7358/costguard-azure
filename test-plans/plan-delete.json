@@ -1,0 +1,29 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.0",
+  "resource_changes": [
+    {
+      "address": "azurerm_linux_virtual_machine.legacy_worker",
+      "mode": "managed",
+      "type": "azurerm_linux_virtual_machine",
+      "name": "legacy_worker",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "admin_username": "azureuser",
+          "location": "East US",
+          "name": "vm-legacy-worker-01",
+          "size": "Standard_B1s",
+          "tags": {
+            "Environment": "Legacy",
+            "Decommission": "true"
+          }
+        },
+        "after": null
+      }
+    }
+  ]
+}

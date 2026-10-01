@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: costguard
+Version: 1.0.0
+Summary: Azure Infrastructure Cost Impact Predictor for Terraform
+Author: CostGuard FinOps Team
+License: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: rich>=13.0.0
+Requires-Dist: requests>=2.28.0

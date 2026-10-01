@@ -1,3 +1,14 @@
+Metadata-Version: 2.4
+Name: costguard
+Version: 1.0.0
+Summary: Azure Infrastructure Cost Impact Predictor for Terraform
+Author: CostGuard FinOps Team
+License: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: rich>=13.0.0
+Requires-Dist: requests>=2.28.0
+
 # CostGuard — Azure Infrastructure Cost Impact Predictor
 
 > A standalone CLI tool and FinOps circuit breaker that analyzes Terraform execution plans *before* infrastructure deployment, calculates estimated monthly cost impacts using the official **Azure Retail Prices API**, caches pricing records locally via **SQLite**, and blocks deployments when cost increases exceed a configured budget ceiling.
