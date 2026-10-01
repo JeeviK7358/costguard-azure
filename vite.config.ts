@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    base: process.env.GITHUB_REPOSITORY?.includes('costguard-azure')
+      ? '/costguard-azure/'
+      : '/costguard/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
